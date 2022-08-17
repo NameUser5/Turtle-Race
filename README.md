@@ -1,4 +1,4 @@
-# ~Turtle-Race~
+# Turtle-Race
 Python turtle practice
 
 https://docs.python.org/3/library/turtle.html
