@@ -11,7 +11,9 @@ https://docs.python.org/3/library/turtle.html#turtle.shape
 1. Prep
    1. Create folders with sprites
    2. Create folders with backgrounds
-   3. Choose corresponding colors in hexadecimal --> for pendown
+   3. Choose corresponding colors in hexadecimal
+      1. for pendown, "yoshi.color" attribute to yoshi object
+         1. e.g. pendown(color=yoshi.color)
 
 2. Program
    1. Create gui
