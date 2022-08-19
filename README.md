@@ -7,6 +7,8 @@ https://realpython.com/beginners-guide-python-turtle/#filling-in-an-image
 
 https://docs.python.org/3/library/turtle.html#turtle.shape
 
+https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/
+
 ##Pseudocode
 1. Prep
    1. Create folders with sprites
