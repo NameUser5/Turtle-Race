@@ -1,4 +1,5 @@
 from tkinter import *
+from turtle_file import *
 
 
 def make_gui():
@@ -6,7 +7,7 @@ def make_gui():
     root.title("Turtle Race!")
 
     root.geometry('600x450')
-    root.config(bg='yellow', pady=1, padx=1)
+    root.config(bg='yellow')
     root.resizable(False, False)
 
     grass_background = PhotoImage(file='backgrounds\grassy_meadow.png').subsample(3, 3)

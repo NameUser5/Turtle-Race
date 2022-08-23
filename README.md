@@ -7,6 +7,16 @@ https://realpython.com/beginners-guide-python-turtle/#filling-in-an-image
 
 https://docs.python.org/3/library/turtle.html#turtle.shape
 
+***
+https://www.geeksforgeeks.org/turtle-addshape-function-in-python/
+https://replit.com/talk/ask/Python-Turtle-using-images/8931
+https://www.youtube.com/watch?v=SeXgkASIQcA
+***
+
+https://holypython.com/python-turtle-tutorial/turtle-penup-and-pendown/
+
+https://vegibit.com/change-pen-color-in-python-turtle/
+
 https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/
 
 ##Pseudocode
