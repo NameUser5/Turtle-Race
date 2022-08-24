@@ -6,10 +6,23 @@ https://docs.python.org/3/library/turtle.html
 https://realpython.com/beginners-guide-python-turtle/#filling-in-an-image
 
 https://docs.python.org/3/library/turtle.html#turtle.shape
+***
+https://replit.com/@Amun84/turtle2#main.py
 
+https://replit.com/@EssDoe/turtle2#main.py
+
+https://skoolofcode.us/blog/build-turtle-race-game-using-python/
+
+https://trinket.io/python/9339862606
+
+https://pythonguides.com/python-turtle-race/
+
+https://www.futurelearn.com/info/courses/object-oriented-principles/0/steps/31480
 ***
 https://www.geeksforgeeks.org/turtle-addshape-function-in-python/
+
 https://replit.com/talk/ask/Python-Turtle-using-images/8931
+
 https://www.youtube.com/watch?v=SeXgkASIQcA
 ***
 
