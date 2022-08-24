@@ -35,7 +35,7 @@ racers = []
 
 y_axis = 100
 
-for _ in range(4):
+for _ in range(4):   #add more
     new_turtle = Turtle(shape='turtle')
     new_turtle.penup()
     new_turtle.color(colors[_])
