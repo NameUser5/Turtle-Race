@@ -1,11 +1,11 @@
 from turtle import *
-import turtle
+from turtle import Turtle
 import random
 
 ## Turtle screen:
 screen = Screen()
-screen.setup(width=500, height=500)
-screen.screensize(500, 500)
+screen.setup(width=500, height=400)
+screen.screensize(500, 400)
 
 screen.bgcolor('light gray')
 screen.bgpic(r'')
@@ -31,30 +31,45 @@ hidden_bets = [pink_bet, cyan_bet, purple_bet, yellow_bet, brown_bet, white_bet,
 
 user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets} ").upper()
 
-# speed(0)
-# penup()
-# goto(-140, 140)
+racers = []
+
+y_axis = 100
+
+for _ in range(4):
+    new_turtle = Turtle(shape='turtle')
+    new_turtle.penup()
+    new_turtle.color(colors[_])
+    new_turtle.goto(-200, y=y_axis)
+    racers.append(new_turtle)
+    y_axis -= 50
+
+speed(0)
+penup()
+goto(-180, 110)
 #
 # ## Field markings:
-# for _ in range(11):
-#     write(_, align='center')
-#     right(90)
-#     for _ in range(8):
-#         penup()
-#         forward(10)
-#         pendown()
-#         forward(10)
-#     penup()
-#     backward(160)
-#     left(90)
-#     forward(20)
-#
-# class Athlete:
-#     def __init__(self, color, position):
-#         self.color = color
-#         self.position = position
+for _ in range(11):
+    write(_, align='center')
+    right(90)
+    for _ in range(8):
+        penup()
+        forward(10)
+        pendown()
+        forward(10)
+    penup()
+    backward(160)
+    left(90)
+    forward(30)
 
-turtle.done()
+write("Finish!", align="center")
+color('Red')
+right(90)
+forward(10)
+pendown()
+forward(160)
+penup()
+
+done()
 
 # green = #44D311
 # red = '#EF0000'
