@@ -85,3 +85,8 @@ https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/
    3. compound probabilities of these code occurrences
       1. e.g.: rainbow yoshi code has a 0.6% chance of being shown to the player, even if they won their bet
    4. Copy to clipboard button
+
+
+turtle.isvisible()
+turtle.hideturtle()
+turtle.ht()

@@ -29,7 +29,7 @@ available_bets = [green_bet, red_bet, blue_bet, orange_bet]
 
 hidden_bets = [pink_bet, cyan_bet, purple_bet, yellow_bet, brown_bet, white_bet, black_bet]
 
-user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets} ").upper()
+user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets} ")
 
 racers = []
 
@@ -46,7 +46,8 @@ for _ in range(4):   #add more
 speed(0)
 penup()
 goto(-180, 110)
-#
+
+
 # ## Field markings:
 for _ in range(11):
     write(_, align='center')
@@ -68,6 +69,39 @@ forward(10)
 pendown()
 forward(160)
 penup()
+
+
+def display_winner(winner):
+    print(f"The {winner} turtle is the winner!\nYou get nothing in return, sorry!")
+    announcer_turtle.showturtle()
+    announcer_turtle.write(f"The {winner} turtle is the winner!\nYou get nothing in return, sorry!      ", True)
+
+game_run = ''
+announcer_turtle = Turtle(shape='turtle')
+announcer_turtle.hideturtle()
+announcer_turtle.color('gray')
+announcer_turtle.pencolor('black')
+announcer_turtle.penup()
+announcer_turtle.goto(-190, -100)
+announcer_turtle.hideturtle()
+
+if user_bet:
+    game_run = True
+
+while game_run:
+    for _ in racers:
+        _.forward(random.randint(0, 10))
+        if _.xcor() >= 150:
+            race_on = False
+            winner = _.pencolor()
+            if winner == user_bet.lower():
+                display_winner(winner)
+            else:
+                announcer_turtle.showturtle()
+                announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} turtle won. Sorry.      ", True)
+                print(f"You bet on {user_bet}.\nThe {winner} turtle won. Sorry.")
+                done()
+
 
 done()
 
