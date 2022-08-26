@@ -14,7 +14,7 @@ screen.title('Turtle Race!')
 colors = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow', 'brown', 'white', 'black']
 
 ## YOSHIS ##
-platinum_yoshi = r'deluxe yoshis/platinum yoshi.gif'
+platinum_yoshi = r'deluxe yoshis/platinum yoshi test.gif'
 screen.register_shape(r'yoshis/black yoshi.gif')
 screen.register_shape(r'yoshis/white yoshi.gif')
 screen.register_shape(r'yoshis/brown yoshi.gif')
@@ -117,8 +117,8 @@ announcer_turtle = Turtle(shape='turtle')
 announcer_turtle.hideturtle()
 announcer_turtle.color('gray')
 announcer_turtle.shape(platinum_yoshi)
-announcer_turtle.resizemode('user')
-announcer_turtle.shapesize(-9,-9)
+# announcer_turtle.resizemode('user')
+# announcer_turtle.shapesize(-9,-9)
 # announcer_turtle.turtlesize(-9)
 announcer_turtle.pencolor('black')
 announcer_turtle.penup()
