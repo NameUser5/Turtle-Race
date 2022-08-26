@@ -84,10 +84,38 @@ def racer_colors(available_bets):
         new_turtle.penup()
 
         new_turtle.color(color_names[idx])
+        determine_image(new_turtle)
+        screen.listen()
+
         new_turtle.goto(-200, y=y_axis)
         racers.append(new_turtle)
         y_axis -= 50
         idx += 1
+
+def determine_image(turtle):
+    if turtle.color == 'green':
+        return turtle.shape(green_yoshi)
+    elif turtle.color == 'red':
+        return turtle.shape(red_yoshi)
+    elif turtle.color == 'orange':
+        return turtle.shape(orange_yoshi)
+    elif turtle.color == 'yellow':
+        return turtle.shape(yellow_yoshi)
+    elif turtle.color == 'blue':
+        return turtle.shape(blue_yoshi)
+    elif turtle.color == 'cyan':
+        return turtle.shape(cyan_yoshi)
+    elif turtle.color == 'purple':
+        return turtle.shape(purple_yoshi)
+    elif turtle.color == 'pink':
+        return turtle.shape(pink_yoshi)
+    elif turtle.color == 'white':
+        return turtle.shape(white_yoshi)
+    elif turtle.color == 'brown':
+        return turtle.shape(brown_yoshi)
+    elif turtle.color == 'black':
+        return turtle.shape(black_yoshi)
+    screen.listen()
 
 
 racer_colors(available_bets)
