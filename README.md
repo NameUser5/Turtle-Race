@@ -1,6 +1,14 @@
 # Turtle-Race
 Python turtle practice
 
+### NEXT:
+* Move turtle file to main
+* create yoshis as buttons **OR** buttons behind yoshis
+* place full game (sans images) into a larger while loop with flag
+  * have prompt at end of game for game restart
+
+https://stackoverflow.com/questions/59902849/how-can-i-create-a-button-in-turtle
+
 https://docs.python.org/3/library/turtle.html
 
 https://realpython.com/beginners-guide-python-turtle/#filling-in-an-image
