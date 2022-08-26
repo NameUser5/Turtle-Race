@@ -14,23 +14,40 @@ screen.title('Turtle Race!')
 colors = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow', 'brown', 'white', 'black']
 
 ## YOSHIS ##
-platinum_yoshi = r'deluxe yoshis/platinum yoshi test.gif'
-screen.register_shape(r'yoshis/black yoshi.gif')
-screen.register_shape(r'yoshis/white yoshi.gif')
-screen.register_shape(r'yoshis/brown yoshi.gif')
-screen.register_shape(r'yoshis/green yoshi.gif')
-screen.register_shape(r'yoshis/red yoshi.gif')
-screen.register_shape(r'yoshis/blue yoshi.gif')
-screen.register_shape(r'yoshis/orange yoshi.gif')
-screen.register_shape(r'yoshis/pink yoshi.gif')
-screen.register_shape(r'yoshis/cyan yoshi.gif')
-screen.register_shape(r'yoshis/purple yoshi.gif')
-screen.register_shape(r'yoshis/yellow yoshi.gif')
-screen.register_shape(r'deluxe yoshis/bronze yoshi.gif')
-screen.register_shape(r'deluxe yoshis/silver yoshi.gif')
-screen.register_shape(r'deluxe yoshis/gold yoshi.gif')
+rainbow_yoshi = r'deluxe yoshis/rainbow yoshi.gif'
+platinum_yoshi = r'deluxe yoshis/platinum yoshi.gif'
+gold_yoshi = r'deluxe yoshis/gold yoshi.gif'
+silver_yoshi = r'deluxe yoshis/silver yoshi.gif'
+bronze_yoshi = r'deluxe yoshis/bronze yoshi.gif'
+black_yoshi = r'yoshis/black yoshi.gif'
+brown_yoshi = r'yoshis/brown yoshi.gif'
+white_yoshi = r'yoshis/white yoshi.gif'
+green_yoshi = r'yoshis/green yoshi.gif'
+red_yoshi = r'yoshis/red yoshi.gif'
+orange_yoshi = r'yoshis/orange yoshi.gif'
+yellow_yoshi = r'yoshis/yellow yoshi.gif'
+blue_yoshi = r'yoshis/blue yoshi.gif'
+cyan_yoshi = r'yoshis/cyan yoshi.gif'
+purple_yoshi = r'yoshis/purple yoshi.gif'
+pink_yoshi = r'yoshis/pink yoshi.gif'
+
+
+screen.register_shape(rainbow_yoshi)
 screen.register_shape(platinum_yoshi)
-screen.register_shape(r'deluxe yoshis/rainbow yoshi.gif')
+screen.register_shape(gold_yoshi)
+screen.register_shape(silver_yoshi)
+screen.register_shape(bronze_yoshi)
+screen.register_shape(black_yoshi)
+screen.register_shape(brown_yoshi)
+screen.register_shape(white_yoshi)
+screen.register_shape(green_yoshi)
+screen.register_shape(red_yoshi)
+screen.register_shape(orange_yoshi)
+screen.register_shape(yellow_yoshi)
+screen.register_shape(blue_yoshi)
+screen.register_shape(cyan_yoshi)
+screen.register_shape(purple_yoshi)
+screen.register_shape(pink_yoshi)
 
 
 green_bet = "green"
@@ -110,7 +127,7 @@ penup()
 def display_winner(winner):
     print(f"The {winner} turtle is the winner!\n...but you get nothing in return. Sorry!")
     announcer_turtle.showturtle()
-    announcer_turtle.write(f"The {winner} turtle is the winner!\n...but you get nothing in return. Sorry!      ", True)
+    announcer_turtle.write(f"The {winner} turtle is the winner!\n...but you get nothing in return. Sorry!    ", True)
     done()
 
 game_run = ''
