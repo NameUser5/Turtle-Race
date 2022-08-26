@@ -29,8 +29,6 @@ available_bets = [green_bet, red_bet, blue_bet, orange_bet, pink_bet, cyan_bet, 
 
 hidden_bets = [brown_bet, white_bet, black_bet]
 
-# user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets}")
-
 racers = []
 bet_options = []
 
