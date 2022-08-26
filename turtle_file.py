@@ -122,7 +122,7 @@ def determine_image(turtle, color):
 
 racer_colors(available_bets)
 
-user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}")
+user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}").lower()
 
 speed(0)
 penup()
