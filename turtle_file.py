@@ -62,9 +62,10 @@ brown_bet = "brown"
 white_bet = "white"
 black_bet = "black"
 
-available_bets = [green_bet, red_bet, blue_bet, orange_bet, pink_bet, cyan_bet, purple_bet, yellow_bet]
+# available_bets = [green_bet, red_bet, blue_bet, orange_bet, pink_bet, cyan_bet, purple_bet, yellow_bet]
+available_bets = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow']
 
-hidden_bets = [brown_bet, white_bet, black_bet]
+hidden_bets = ['brown', 'white', 'black']
 
 racers = []
 bet_options = []
@@ -84,7 +85,7 @@ def racer_colors(available_bets):
         new_turtle.penup()
 
         new_turtle.color(color_names[idx])
-        determine_image(new_turtle)
+        determine_image(new_turtle, color_names[idx])
         screen.listen()
 
         new_turtle.goto(-200, y=y_axis)
@@ -92,28 +93,51 @@ def racer_colors(available_bets):
         y_axis -= 50
         idx += 1
 
-def determine_image(turtle):
-    if turtle.color == 'green':
+def determine_image(turtle,color):
+    if color == 'green':
         return turtle.shape(green_yoshi)
-    elif turtle.color == 'red':
+    elif color == 'red':
         return turtle.shape(red_yoshi)
-    elif turtle.color == 'orange':
+    elif color == 'orange':
         return turtle.shape(orange_yoshi)
-    elif turtle.color == 'yellow':
+    elif color == 'yellow':
         return turtle.shape(yellow_yoshi)
-    elif turtle.color == 'blue':
+    elif color == 'blue':
         return turtle.shape(blue_yoshi)
-    elif turtle.color == 'cyan':
+    elif color == 'cyan':
         return turtle.shape(cyan_yoshi)
-    elif turtle.color == 'purple':
+    elif color == 'purple':
         return turtle.shape(purple_yoshi)
-    elif turtle.color == 'pink':
+    elif color == 'pink':
         return turtle.shape(pink_yoshi)
-    elif turtle.color == 'white':
+    elif color == 'white':
         return turtle.shape(white_yoshi)
-    elif turtle.color == 'brown':
+    elif color == 'brown':
         return turtle.shape(brown_yoshi)
-    elif turtle.color == 'black':
+    elif color == 'black':
+        return turtle.shape(black_yoshi)
+    
+    # elif turtle.color('red'):
+    #     return turtle.shape(red_yoshi)
+    # elif turtle.color == 'orange':
+    #     return turtle.shape(orange_yoshi)
+    # elif turtle.color == 'yellow':
+    #     return turtle.shape(yellow_yoshi)
+    # elif turtle.color == 'blue':
+    #     return turtle.shape(blue_yoshi)
+    # elif turtle.color == 'cyan':
+    #     return turtle.shape(cyan_yoshi)
+    # elif turtle.color == 'purple':
+    #     return turtle.shape(purple_yoshi)
+    # elif turtle.color == 'pink':
+    #     return turtle.shape(pink_yoshi)
+    # elif turtle.color == 'white':
+    #     return turtle.shape(white_yoshi)
+    # elif turtle.color == 'brown':
+    #     return turtle.shape(brown_yoshi)
+    # elif turtle.color == 'black':
+    #     return turtle.shape(black_yoshi)
+    else:
         return turtle.shape(black_yoshi)
     screen.listen()
 
