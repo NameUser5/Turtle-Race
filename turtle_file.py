@@ -13,6 +13,27 @@ screen.title('Turtle Race!')
 
 colors = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow', 'brown', 'white', 'black']
 
+## YOSHIS ##
+platinum_yoshi = r'deluxe yoshis/platinum yoshi.gif'
+platinum_yoshi.subsample(9, 9)
+screen.register_shape(r'yoshis/black yoshi.gif')
+screen.register_shape(r'yoshis/white yoshi.gif')
+screen.register_shape(r'yoshis/brown yoshi.gif')
+screen.register_shape(r'yoshis/green yoshi.gif')
+screen.register_shape(r'yoshis/red yoshi.gif')
+screen.register_shape(r'yoshis/blue yoshi.gif')
+screen.register_shape(r'yoshis/orange yoshi.gif')
+screen.register_shape(r'yoshis/pink yoshi.gif')
+screen.register_shape(r'yoshis/cyan yoshi.gif')
+screen.register_shape(r'yoshis/purple yoshi.gif')
+screen.register_shape(r'yoshis/yellow yoshi.gif')
+screen.register_shape(r'deluxe yoshis/bronze yoshi.gif')
+screen.register_shape(r'deluxe yoshis/silver yoshi.gif')
+screen.register_shape(r'deluxe yoshis/gold yoshi.gif')
+screen.register_shape(platinum_yoshi)
+screen.register_shape(r'deluxe yoshis/rainbow yoshi.gif')
+
+
 green_bet = "green"
 red_bet = "red"
 blue_bet = "blue"
@@ -96,6 +117,7 @@ game_run = ''
 announcer_turtle = Turtle(shape='turtle')
 announcer_turtle.hideturtle()
 announcer_turtle.color('gray')
+announcer_turtle.shape(platinum_yoshi)
 announcer_turtle.pencolor('black')
 announcer_turtle.penup()
 announcer_turtle.goto(-190, -100)
@@ -120,29 +142,5 @@ while game_run:
 
 
 done()
-
-# green = #44D311
-# red = '#EF0000'
-# blue = '#2742FF'
-# yellow = '#FED905'
-# pink = '#FF77BA'
-# cyan = '#15D5FD'
-# orange = '#FD6907'
-# purple = '#8A3DBE'
-# black = '#333333'
-# white = '#C1D0D0'
-# brown = '#AB6021'
-
-# green_yoshi = r'yoshis\green yoshi.png'
-# screen = turtle.Screen()
-# # image = green_yoshi
-# #'yoshis\green yoshi.png'
-# screen.addshape(green_yoshi, shape=None)
-# turtle.shape(green_yoshi)
-#
-# # turtle.color('white')
-# # turtle.register_shape(r'yoshis\green yoshi.png')
-#
-# print(turtle.getshapes())
 
 # turtle.exitonclick()
