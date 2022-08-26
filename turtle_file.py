@@ -36,19 +36,29 @@ bet_options = []
 
 y_axis = 100
 
-for _ in range(4):   #add more
-    new_turtle = Turtle(shape='turtle')
-    new_turtle.penup()
-    color_name = random.sample(available_bets, 1)
-    # color_name.lower()
-    new_turtle.color(color_name)
-    new_turtle.goto(-200, y=y_axis)
-    racers.append(new_turtle)
-    y_axis -= 50
+random.shuffle(available_bets)
 
-    bet_options.append(color_name)
+def racer_colors(available_bets):
+    global y_axis
+    color_name = random.sample(available_bets, 4)
 
+    for _ in range(4):   #add more
+        idx = 0
+        new_turtle = Turtle(shape='turtle')
+        new_turtle.penup()
+        # color_name = random.choice(available_bets)
+        # print(color_name)
 
+        # color_name.lower()
+        new_turtle.color(color_name[idx])
+        new_turtle.goto(-200, y=y_axis)
+        racers.append(new_turtle)
+        y_axis -= 50
+        idx +=1
+
+        bet_options.append(color_name)
+
+racer_colors(available_bets)
 
 user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}")
 
