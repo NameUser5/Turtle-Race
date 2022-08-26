@@ -60,7 +60,7 @@ user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}"
 
 speed(0)
 penup()
-goto(-180, 110)
+goto(-180, 120)
 
 
 # ## Field markings:
@@ -69,11 +69,11 @@ for _ in range(11):
     right(90)
     for _ in range(8):
         penup()
-        forward(10)
+        forward(11)
         pendown()
-        forward(10)
+        forward(11)
     penup()
-    backward(160)
+    backward(176)
     left(90)
     forward(30)
 
@@ -82,7 +82,7 @@ color('Red')
 right(90)
 forward(10)
 pendown()
-forward(160)
+forward(174)
 penup()
 
 
