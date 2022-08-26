@@ -7,7 +7,7 @@ screen = Screen()
 screen.setup(width=500, height=400)
 screen.screensize(500, 400)
 
-screen.bgcolor('light gray')
+screen.bgcolor('black')
 screen.bgpic(r'')
 screen.title('Turtle Race!')
 
@@ -86,6 +86,7 @@ goto(-180, 120)
 # ## Field markings:
 for _ in range(11):
     write(_, align='center')
+    color('light gray')
     right(90)
     for _ in range(8):
         penup()
@@ -120,7 +121,7 @@ announcer_turtle.shape(platinum_yoshi)
 # announcer_turtle.resizemode('user')
 # announcer_turtle.shapesize(-9,-9)
 # announcer_turtle.turtlesize(-9)
-announcer_turtle.pencolor('black')
+announcer_turtle.pencolor('light gray')
 announcer_turtle.penup()
 announcer_turtle.goto(-190, -100)
 announcer_turtle.hideturtle()
