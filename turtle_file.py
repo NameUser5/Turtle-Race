@@ -13,35 +13,45 @@ screen.title('Turtle Race!')
 
 colors = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow', 'brown', 'white', 'black']
 
-green_bet = "G - Green yoshi"
-red_bet = "R - Red yoshi"
-blue_bet = "B - Blue yoshi"
-orange_bet = "O - Orange yoshi"
-pink_bet = "K - Pink yoshi"
-cyan_bet = "C - Cyan yoshi"
-purple_bet = "P - Purple yoshi"
-yellow_bet = "Y - Yellow yoshi"
-brown_bet = "W - Brown yoshi"
-white_bet = "H - White yoshi"
-black_bet = "A - Black yoshi"
+green_bet = "green"
+red_bet = "red"
+blue_bet = "blue"
+orange_bet = "orange"
+pink_bet = "pink"
+cyan_bet = "cyan"
+purple_bet = "purple"
+yellow_bet = "yellow"
+brown_bet = "brown"
+white_bet = "white"
+black_bet = "black"
 
-available_bets = [green_bet, red_bet, blue_bet, orange_bet]
+available_bets = [green_bet, red_bet, blue_bet, orange_bet, pink_bet, cyan_bet, purple_bet, yellow_bet]
 
-hidden_bets = [pink_bet, cyan_bet, purple_bet, yellow_bet, brown_bet, white_bet, black_bet]
+hidden_bets = [brown_bet, white_bet, black_bet]
 
-user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets} ")
+# user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{available_bets}")
 
 racers = []
+bet_options = []
 
 y_axis = 100
 
 for _ in range(4):   #add more
     new_turtle = Turtle(shape='turtle')
     new_turtle.penup()
-    new_turtle.color(colors[_])
+    color_name = random.sample(available_bets, 1)
+    # color_name.lower()
+    new_turtle.color(color_name)
     new_turtle.goto(-200, y=y_axis)
     racers.append(new_turtle)
     y_axis -= 50
+
+    bet_options.append(color_name)
+
+
+
+user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}")
+
 
 speed(0)
 penup()
@@ -72,9 +82,10 @@ penup()
 
 
 def display_winner(winner):
-    print(f"The {winner} turtle is the winner!\nYou get nothing in return, sorry!")
+    print(f"The {winner} turtle is the winner!\n...but you get nothing in return. Sorry!")
     announcer_turtle.showturtle()
-    announcer_turtle.write(f"The {winner} turtle is the winner!\nYou get nothing in return, sorry!      ", True)
+    announcer_turtle.write(f"The {winner} turtle is the winner!\n...but you get nothing in return. Sorry!      ", True)
+    done()
 
 game_run = ''
 announcer_turtle = Turtle(shape='turtle')
@@ -129,5 +140,4 @@ done()
 #
 # print(turtle.getshapes())
 
-help(register_shape)
 # turtle.exitonclick()
