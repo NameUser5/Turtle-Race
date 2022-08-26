@@ -15,7 +15,6 @@ colors = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow', 
 
 ## YOSHIS ##
 platinum_yoshi = r'deluxe yoshis/platinum yoshi.gif'
-platinum_yoshi.subsample(9, 9)
 screen.register_shape(r'yoshis/black yoshi.gif')
 screen.register_shape(r'yoshis/white yoshi.gif')
 screen.register_shape(r'yoshis/brown yoshi.gif')
@@ -118,10 +117,14 @@ announcer_turtle = Turtle(shape='turtle')
 announcer_turtle.hideturtle()
 announcer_turtle.color('gray')
 announcer_turtle.shape(platinum_yoshi)
+announcer_turtle.turtlesize(-9)
 announcer_turtle.pencolor('black')
 announcer_turtle.penup()
 announcer_turtle.goto(-190, -100)
 announcer_turtle.hideturtle()
+
+# screen.onkey(-9)
+screen.listen()
 
 if user_bet:
     game_run = True

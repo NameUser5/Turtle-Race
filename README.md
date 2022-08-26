@@ -24,6 +24,8 @@ https://www.geeksforgeeks.org/turtle-addshape-function-in-python/
 https://replit.com/talk/ask/Python-Turtle-using-images/8931
 
 https://www.youtube.com/watch?v=SeXgkASIQcA
+
+https://pythonguides.com/python-turtle-size/
 ***
 
 https://holypython.com/python-turtle-tutorial/turtle-penup-and-pendown/
