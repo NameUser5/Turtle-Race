@@ -48,6 +48,19 @@ screen.register_shape(cyan_yoshi)
 screen.register_shape(purple_yoshi)
 screen.register_shape(pink_yoshi)
 
+## UMPIRE (UPDATES TO USER)
+announcer_turtle = Turtle(shape='turtle')
+announcer_turtle.hideturtle()
+announcer_turtle.color('gray')
+announcer_turtle.shape(platinum_yoshi)
+
+announcer_turtle.pencolor('light gray')
+announcer_turtle.penup()
+announcer_turtle.goto(-190, -115)
+announcer_turtle.hideturtle()
+
+screen.listen()
+
 green_bet = "green"
 red_bet = "red"
 blue_bet = "blue"
@@ -83,7 +96,9 @@ def racer_colors(available_bets):
         new_turtle.penup()
 
         new_turtle.color(color_names[idx])
+        # confirm_bet = new_turtle.onclick(color_names[idx])
         determine_image(new_turtle, color_names[idx])
+        make_button(new_turtle, color_names[idx])
         screen.listen()
 
         new_turtle.goto(-200, y=y_axis)
@@ -92,29 +107,62 @@ def racer_colors(available_bets):
         idx += 1
 
 
+def ask_bet(turtle, color):
+    announcer_turtle.write(f"Bet! Who will win?\n{bet_options}")
+
+# def make_button(turtle,color):
+#     turtle.onclick(lambda: turtle.color())
+#     print(turtle.color())
+
+# def make_bet(color):
+#     if
+
+    
 def determine_image(turtle, color):
     if color == 'green':
-        return turtle.shape(green_yoshi)
+        turtle.onclick(turtle.color())
+        print('click green')
+        return turtle.shape(green_yoshi), user_bet
     elif color == 'red':
-        return turtle.shape(red_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click red')
+        return turtle.shape(red_yoshi), user_bet
     elif color == 'orange':
-        return turtle.shape(orange_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click orange')
+        return turtle.shape(orange_yoshi), user_bet
     elif color == 'yellow':
-        return turtle.shape(yellow_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click yellow')
+        return turtle.shape(yellow_yoshi), user_bet
     elif color == 'blue':
-        return turtle.shape(blue_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click blue')
+        return turtle.shape(blue_yoshi), user_bet
     elif color == 'cyan':
-        return turtle.shape(cyan_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click cyan')
+        return turtle.shape(cyan_yoshi), user_bet
     elif color == 'purple':
-        return turtle.shape(purple_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click purple')
+        return turtle.shape(purple_yoshi), user_bet
     elif color == 'pink':
-        return turtle.shape(pink_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click pink')
+        return turtle.shape(pink_yoshi), user_bet
     elif color == 'white':
-        return turtle.shape(white_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click white')
+        return turtle.shape(white_yoshi), user_bet
     elif color == 'brown':
-        return turtle.shape(brown_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click brown')
+        return turtle.shape(brown_yoshi), user_bet
     elif color == 'black':
-        return turtle.shape(black_yoshi)
+        user_bet = turtle.onclick(ask_bet)
+        print('click black')
+        return turtle.shape(black_yoshi), user_bet
     # else:
     #     return turtle.shape(black_yoshi)          # wasn't working (why though???)
     screen.listen()
@@ -122,7 +170,7 @@ def determine_image(turtle, color):
 
 racer_colors(available_bets)
 
-user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}").lower()
+# user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}").lower()
 
 speed(0)
 penup()
@@ -154,42 +202,30 @@ penup()
 ## PROMPTS THE UMPIRE TO DECLARE THE WINNER
 def display_winner(winner):
     print(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!")
+    announcer_turtle.goto(-190, -115)
     announcer_turtle.showturtle()
     announcer_turtle.write(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!     ", True)
     done()
 
 
-## UMPIRE (UPDATES TO USER)
-announcer_turtle = Turtle(shape='turtle')
-announcer_turtle.hideturtle()
-announcer_turtle.color('gray')
-announcer_turtle.shape(platinum_yoshi)
-
-announcer_turtle.pencolor('light gray')
-announcer_turtle.penup()
-announcer_turtle.goto(-190, -115)
-announcer_turtle.hideturtle()
-
-screen.listen()
-
-## PROMPT RACE
-game_run = ''
-if user_bet:
-    game_run = True
-
-## CODE FOR RACERS
-while game_run:
-    for _ in racers:
-        _.forward(random.randint(0, 10))
-        if _.xcor() >= 150:
-            game_run = False
-            winner = _.pencolor()
-            if winner == user_bet.lower():
-                display_winner(winner)
-            else:
-                announcer_turtle.showturtle()
-                announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.      ", True)
-                print(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.")
-                done()
+# ## PROMPT RACE
+# game_run = ''
+# if user_bet:
+#     game_run = True
+#
+# ## CODE FOR RACERS
+# while game_run:
+#     for _ in racers:
+#         _.forward(random.randint(0, 10))
+#         if _.xcor() >= 150:
+#             game_run = False
+#             winner = _.pencolor()
+#             if winner == user_bet.lower():
+#                 display_winner(winner)
+#             else:
+#                 announcer_turtle.showturtle()
+#                 announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.      ", True)
+#                 print(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.")
+#                 done()
 
 done()
