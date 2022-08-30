@@ -100,3 +100,10 @@ https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/
 turtle.isvisible()
 turtle.hideturtle()
 turtle.ht()
+
+### LOOP
+* game loops once
+* display end text
+* end loop
+* ask user to reloop (play again)
+* reset loop
