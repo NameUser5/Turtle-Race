@@ -1,6 +1,7 @@
 from turtle import *
 from turtle import Turtle
 import random
+import time
 
 ## Turtle screen:
 screen = Screen()
@@ -178,6 +179,7 @@ while game_flag == True:
         done()
 
     def play_again():
+        time.sleep(6)
         confirm_replay = screen.textinput(title="Play again?", prompt=f"Press [OK] to play again. Enter a secret code if you "
                                                               f"have one.").upper()
         # if confirm_replay == '':
@@ -218,8 +220,8 @@ while game_flag == True:
                     announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.      ", True)
                     print(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.")
                     play_again()
-                    resetscreen()
-                    announcer_turtle.resetscreen()
+                    # resetscreen()
+                    # announcer_turtle.resetscreen()
                     # done()
                     mainloop()
 
