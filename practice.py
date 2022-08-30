@@ -9,7 +9,7 @@ def draw_onclick(x, y):
 
 button = Turtle()
 button.hideturtle()
-button.shape('circle')
+button.shape('classic')
 button.fillcolor('red')
 button.penup()
 button.goto(150, 150)

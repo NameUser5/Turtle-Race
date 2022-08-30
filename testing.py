@@ -81,6 +81,7 @@ while game_flag == True:
         idx = 0
 
         for _ in range(4):
+            #YOSHIS
             new_turtle = Turtle(shape='turtle')
             new_turtle.penup()
 
@@ -90,8 +91,24 @@ while game_flag == True:
 
             new_turtle.goto(-200, y=y_axis)
             racers.append(new_turtle)
+            button_turtle = Turtle(shape='classic')
+            button_turtle.penup()
+            button_turtle.color(color_names[idx])
+            button_turtle.goto(-215, y=y_axis)
+            button_turtle.onclick(select_color(new_turtle))
+
             y_axis -= 50
             idx += 1
+
+    def select_color(turtle):
+        user_bet = turtle.color()
+        print(user_bet)
+        return user_bet
+
+    # #YOSHI BUTTONS
+    # def make_buttons(available_bets):
+    #     global y_axis
+
 
 
     def determine_image(turtle, color):
@@ -149,6 +166,26 @@ while game_flag == True:
     pendown()
     forward(190)  # put 2 less than line 144
     penup()
+
+
+    ## UMPIRE (UPDATES TO USER)
+    announcer_turtle = Turtle(shape='turtle')
+    announcer_turtle.hideturtle()
+    announcer_turtle.color('gray')
+    announcer_turtle.shape(platinum_yoshi)
+
+    announcer_turtle.pencolor('light gray')
+    announcer_turtle.penup()
+    announcer_turtle.goto(-190, -115)
+    announcer_turtle.hideturtle()
+
+    announcer_turtle.write("Bet by click! Who do you think will win?")
+    time.sleep(1)
+    announcer_turtle.showturtle()
+
+    screen.listen()
+
+
 
     ## Game Run:
     game_run = True

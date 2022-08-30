@@ -80,7 +80,7 @@ while game_flag == True:
 
     random.shuffle(available_bets)
 
-
+    ## SET YOSHI POSITIONS:
     def racer_colors(available_bets):
         global y_axis
         color_names = random.sample(available_bets, 4)
