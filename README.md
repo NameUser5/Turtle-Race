@@ -93,6 +93,7 @@ https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/
       8. gain invincibility from deterrents
       9. access secret backgrounds
       10. play against someone else
+      11. change all yoshis to boos (once you have the button functionality)
    3. compound probabilities of these code occurrences
       1. e.g.: rainbow yoshi code has a 0.6% chance of being shown to the player, even if they won their bet
    4. Copy to clipboard button

@@ -197,6 +197,8 @@ while game_flag == True:
         time.sleep(3)
         confirm_replay = screen.textinput(title="Play again?", prompt=f"Press [OK] to play again. Enter a secret code if you "
                                                               f"have one.").upper()
+
+        print(confirm_replay)
         if confirm_replay == '':
             screen.resetscreen()
 
