@@ -124,6 +124,19 @@ while game_flag == True:
             return turtle.shape(brown_yoshi)
         elif color == 'black':
             return turtle.shape(black_yoshi)
+
+        #     ## UMPIRE (UPDATES TO USER)
+        # announcer_turtle = Turtle(shape='turtle')
+        # announcer_turtle.hideturtle()
+        # announcer_turtle.color('gray')
+        # announcer_turtle.shape(platinum_yoshi)
+        #
+        # announcer_turtle.pencolor('light gray')
+        # announcer_turtle.penup()
+        # announcer_turtle.goto(-190, -115)
+        # announcer_turtle.hideturtle()
+        #
+        # screen.listen()
         # else:
         #     return turtle.shape(black_yoshi)          # wasn't working (why though???)
         screen.listen()
@@ -175,17 +188,34 @@ while game_flag == True:
         print(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!")
         announcer_turtle.showturtle()
         announcer_turtle.write(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!     ", True)
-        resetscreen()
+        play_again()
+        # resetscreen()
         done()
 
     def play_again():
-        time.sleep(4)
+        time.sleep(3)
         confirm_replay = screen.textinput(title="Play again?", prompt=f"Press [OK] to play again. Enter a secret code if you "
                                                               f"have one.").upper()
-        # if confirm_replay == '':
-        #     game_flag = True
-        # else:
-        #     game_flag = False
+        if confirm_replay == '':
+            screen.resetscreen()
+
+            for _ in racers:
+                _.reset()
+
+            announcer_turtle.reset()
+            announcer_turtle.hideturtle()
+            announcer_turtle.color('gray')
+            announcer_turtle.shape(platinum_yoshi)
+
+            announcer_turtle.pencolor('light gray')
+            announcer_turtle.penup()
+            announcer_turtle.goto(-190, -115)
+            announcer_turtle.hideturtle()
+
+            screen.listen()
+            game_flag = True
+        else:
+            game_flag = False
 
     ## UMPIRE (UPDATES TO USER)
     announcer_turtle = Turtle(shape='turtle')
