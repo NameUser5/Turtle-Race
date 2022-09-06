@@ -97,6 +97,7 @@ while game_flag == True:
 
             new_turtle.goto(-200, y=y_axis)
             racers.append(new_turtle)
+            print(new_turtle.pos())
             y_axis -= 50
             idx += 1
 
@@ -199,8 +200,10 @@ while game_flag == True:
         if confirm_replay == '':
             screen.resetscreen()
 
-            for _ in racers:
-                _.reset()
+            # for _ in racers:
+            #     _.reset()
+
+            racers = []
 
             announcer_turtle.reset()
             announcer_turtle.hideturtle()
@@ -256,4 +259,4 @@ while game_flag == True:
                     mainloop()
 
 
-    mainloop()
+    screen.mainloop()

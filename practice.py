@@ -1,4 +1,5 @@
 from turtle import Screen, Turtle
+import time
 
 CURSOR_SIZE = 20
 FONT_SIZE = 12
@@ -20,6 +21,9 @@ button.showturtle()
 
 turtle = Turtle()
 turtle.hideturtle()
+
+time.sleep(2)
+button.getturtle()
 
 screen = Screen()
 screen.mainloop()
