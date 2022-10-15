@@ -63,8 +63,15 @@ while game_flag == True:
     screen.register_shape(purple_yoshi)
     screen.register_shape(pink_yoshi)
 
+    def reset_all(turtle):
+        turtle.reset()
+        screen.reset()
 
     available_bets = ['green', 'red', 'blue', 'orange', 'pink', 'cyan', 'purple', 'yellow']
+
+    hidden_bets = ['brown', 'white', 'black']
+
+    secret_codes = []
 
     racers = []
     bet_options = []
@@ -73,15 +80,14 @@ while game_flag == True:
 
     random.shuffle(available_bets)
 
-
+    ## SET YOSHI POSITIONS:
     def racer_colors(available_bets):
         global y_axis
         color_names = random.sample(available_bets, 4)
         bet_options.append(color_names)
-        idx = 0
+        idx = 0  # HERE, NOT IN THE LOOP, IS WHAT WAS MISSING!
 
         for _ in range(4):
-            #YOSHIS
             new_turtle = Turtle(shape='turtle')
             new_turtle.penup()
 
@@ -91,24 +97,9 @@ while game_flag == True:
 
             new_turtle.goto(-200, y=y_axis)
             racers.append(new_turtle)
-            button_turtle = Turtle(shape='classic')
-            button_turtle.penup()
-            button_turtle.color(color_names[idx])
-            button_turtle.goto(-215, y=y_axis)
-            button_turtle.onclick(select_color(new_turtle))
-
+            print(new_turtle.pos())
             y_axis -= 50
             idx += 1
-
-    def select_color(turtle):
-        user_bet = turtle.color()
-        print(user_bet)
-        return user_bet
-
-    # #YOSHI BUTTONS
-    # def make_buttons(available_bets):
-    #     global y_axis
-
 
 
     def determine_image(turtle, color):
@@ -134,11 +125,37 @@ while game_flag == True:
             return turtle.shape(brown_yoshi)
         elif color == 'black':
             return turtle.shape(black_yoshi)
+
+        #     ## UMPIRE (UPDATES TO USER)
+        # announcer_turtle = Turtle(shape='turtle')
+        # announcer_turtle.hideturtle()
+        # announcer_turtle.color('gray')
+        # announcer_turtle.shape(platinum_yoshi)
+        #
+        # announcer_turtle.pencolor('light gray')
+        # announcer_turtle.penup()
+        # announcer_turtle.goto(-190, -115)
+        # announcer_turtle.hideturtle()
+        #
+        # screen.listen()
+        # else:
+        #     return turtle.shape(black_yoshi)          # wasn't working (why though???)
         screen.listen()
 
 
     racer_colors(available_bets)
 
+    user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}").lower()
+    # def validate_bet(bet, options, codes):
+    #         if bet in options:
+    #             return bet
+    #         else:
+    #             flag = True
+    #             while flag:
+    #                 if bet not in codes:
+    #                     user_bet = screen.textinput(title="Bet!", prompt=f"Who will win?\n{bet_options}").lower()
+
+    # validate_bet(user_bet, bet_options, secret_codes)
 
     speed(0)
     penup()
@@ -167,6 +184,43 @@ while game_flag == True:
     forward(190)  # put 2 less than line 144
     penup()
 
+    ## PROMPTS THE UMPIRE TO DECLARE THE WINNER
+    def display_winner(winner):
+        print(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!")
+        announcer_turtle.showturtle()
+        announcer_turtle.write(f"The {winner} yoshi is the winner!\n...but you get nothing in return. Sorry!     ", True)
+        play_again()
+        # resetscreen()
+        done()
+
+    def play_again():
+        time.sleep(3)
+        confirm_replay = screen.textinput(title="Play again?", prompt=f"Press [OK] to play again. Enter a secret code if you "
+                                                              f"have one.").upper()
+
+        print(confirm_replay)
+        if confirm_replay == '':
+            screen.resetscreen()
+
+            # for _ in racers:
+            #     _.reset()
+
+            racers = []
+
+            announcer_turtle.reset()
+            announcer_turtle.hideturtle()
+            announcer_turtle.color('gray')
+            announcer_turtle.shape(platinum_yoshi)
+
+            announcer_turtle.pencolor('light gray')
+            announcer_turtle.penup()
+            announcer_turtle.goto(-190, -115)
+            announcer_turtle.hideturtle()
+
+            screen.listen()
+            game_flag = True
+        else:
+            game_flag = False
 
     ## UMPIRE (UPDATES TO USER)
     announcer_turtle = Turtle(shape='turtle')
@@ -179,33 +233,32 @@ while game_flag == True:
     announcer_turtle.goto(-190, -115)
     announcer_turtle.hideturtle()
 
-    announcer_turtle.write("Bet by click! Who do you think will win?")
-    time.sleep(1)
-    announcer_turtle.showturtle()
-
     screen.listen()
 
+    ## PROMPT RACE
+    game_run = ''
+    if user_bet:
+        game_run = True
 
-
-    ## Game Run:
-    game_run = True
-
+    ## CODE FOR RACERS
     while game_run:
         for _ in racers:
             _.forward(random.randint(0, 10))
             if _.xcor() >= 150:
                 game_run = False
                 winner = _.pencolor()
-                # if winner == user_bet.lower():
-                #     display_winner(winner)
-                #     play_again()
-                # else:
-                #     announcer_turtle.showturtle()
-                #     announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.      ", True)
-                #     print(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.")
-                #     play_again()
-                #     # resetscreen()
-                #     # announcer_turtle.resetscreen()
-                #     # done()
-                #     mainloop()
-    mainloop()
+                if winner == user_bet.lower():
+                    display_winner(winner)
+                    play_again()
+                else:
+                    announcer_turtle.showturtle()
+                    announcer_turtle.write(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.      ", True)
+                    print(f"You bet on {user_bet}.\nThe {winner} yoshi won. Sorry.")
+                    play_again()
+                    # resetscreen()
+                    # announcer_turtle.resetscreen()
+                    # done()
+                    mainloop()
+
+
+    screen.mainloop()
