@@ -5,7 +5,8 @@ Python turtle practice
 * Move turtle file to main - DONE
 * create yoshis as buttons **OR** buttons behind yoshis - IN PROGRESS
 * place full game (sans images) into a larger while loop with flag - DONE
-  * have prompt at end of game for game restart - STUCK
+  * have prompt at end of game for game restart - DONE
+  * have the prompt be fully _functional_ - IN PROGRESS
 * **Learn about decorators. I think this can be a solution to the loop/reset problem I'm having**
 
 https://stackoverflow.com/questions/59902849/how-can-i-create-a-button-in-turtle
