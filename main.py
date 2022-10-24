@@ -31,6 +31,8 @@ cyan_yoshi = r'yoshis/cyan yoshi.gif'
 purple_yoshi = r'yoshis/purple yoshi.gif'
 pink_yoshi = r'yoshis/pink yoshi.gif'
 
+graveyard = r'backgrounds/graveyard.png'
+
 flag = True
 
 while flag:
